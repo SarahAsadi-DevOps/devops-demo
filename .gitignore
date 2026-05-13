@@ -1,0 +1,21 @@
+# env files
+.env
+.env.*
+
+# logs
+*.log
+
+# vscode
+.vscode/
+
+# mac files
+.DS_Store
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# kubernetes secrets
+secrets.yaml
+
