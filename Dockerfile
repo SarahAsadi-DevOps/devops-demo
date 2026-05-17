@@ -1,4 +1,4 @@
-FROM docker.arvancloud.ir/nginx:alpine
+FROM nginx:alpine
 
 COPY app/index.html /usr/share/nginx/html/index.html
 
