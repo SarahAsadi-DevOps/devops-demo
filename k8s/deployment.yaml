@@ -1,27 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
-  name: devops-app
-
+  name: devops-demo-deployment
 spec:
   replicas: 2
-
   selector:
     matchLabels:
-      app: devops-app
-
+      app: devops-demo
   template:
     metadata:
       labels:
-        app: devops-app
-
+        app: devops-demo
     spec:
       containers:
-      - name: devops-container
-        image: devops-demo:latest
-        imagePullPolicy: Never
-
+      - name: devops-demo
+        image: sarahasadi/devops-demo:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
-
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
