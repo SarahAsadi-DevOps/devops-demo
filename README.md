@@ -1,33 +1,39 @@
-# DevOps First Project
+# DevOps Demo Project 
 
-This is my first DevOps practice project created to learn and experiment with different DevOps tools and workflows.
+This is my first DevOps practice project created to learn and experiment with modern DevOps tools and workflows.
 
-The project demonstrates a simple web application containerized with Docker and deployed using Kubernetes, with infrastructure managed by Terraform and a basic CI pipeline using GitHub Actions.
+The project demonstrates a simple static web application (HTML) containerized with Docker and deployed to Kubernetes using Minikube, with CI/CD implemented via GitHub Actions.
 
 ---
 
-## Technologies Used
+## 🛠 Technologies Used
 
 - Git
+- GitHub
 - Docker
-- Docker Compose
 - Kubernetes
 - Minikube
-- Terraform
 - GitHub Actions
 - Nginx
 
 ---
 
-## Project Structure
+##  Project Structure
+```bash
+.
+├── Dockerfile
+├── index.html
+├── .github/workflows/main.yml
+└── k8s/
+├── deployment.yaml
+└── service.yaml
 
----
 
-## Run with Docker
+##  How to Run
+1. **Docker**: `docker build -t devops-demo .`
+2. **Run**: `docker run -p 8080:80 devops-demo`
+3. **K8s**: `kubectl apply -f k8s/`
 
-Build the Docker image:
-
-
-
-Run the container:
+##  Author
+**Sarah Asadi**
 
