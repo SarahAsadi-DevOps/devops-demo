@@ -1,8 +1,7 @@
 version: '3'
-
 services:
   web:
     build: .
+    image: sarahasadi/devops-demo:latest
     ports:
       - "8080:80"
-
